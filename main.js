@@ -16,8 +16,8 @@ Read the terminal output before and after to see the difference
 
 export function start() {
   //your code here
-  // return true
-};
+  return true;
+}
 
 /******************************************************************************
 1.
@@ -31,8 +31,12 @@ received is an even number.
 HINT: Use the modulo operator (%) Google it! 😊
 ******************************************************************************/
 
-export const oddOrEven = () => {
-  //your code here
+export const oddOrEven = (number) => {
+  if (number % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
 };
 
 /******************************************************************************
@@ -47,8 +51,11 @@ Example: "This is cool" should return "THIS IS COOL!"
 
 ******************************************************************************/
 
-export function makeMeLoud() {
-  //your code here
+export function makeMeLoud(text) {
+  text = text.toUpperCase();
+  text += "!";
+
+  return text;
 }
 
 /******************************************************************************
@@ -72,8 +79,20 @@ The function should return:
 
 ******************************************************************************/
 
-export const greeter = () => {
-  //your code here
+export const greeter = (name, hour) => {
+  if (hour >= 0 && hour <= 5) {
+    return "Good night" + " " + name;
+  }
+  if (hour >= 6 && hour <= 11) {
+    return "Good morning" + " " + name;
+  }
+  if (hour >= 12 && hour <= 17) {
+    return "Good day" + " " + name;
+  }
+  if (hour >= 18 && hour <= 23) {
+    return "Good evening" + " " + name;
+  }
+  return "Invalid time";
 };
 
 /******************************************************************************
@@ -90,8 +109,11 @@ Example 2: ["One", "Two", "Three", "Four", "Five", "Six"] should return
 ["Two", "Three", "Four", "Five"]
 ******************************************************************************/
 
-export function arrayTrimmer() {
-  //your code here
+export function arrayTrimmer(array) {
+  array.pop();
+  array.shift();
+
+  return array;
 }
 
 /******************************************************************************
@@ -113,8 +135,11 @@ Example3: "   hard        " should return "fun"
 
 ******************************************************************************/
 
-export const cleanAndFun = () => {
-  //your code here
+export const cleanAndFun = (text) => {
+  text = text.replaceAll("hard", "fun");
+  text = text.trim();
+
+  return text;
 };
 
 /******************************************************************************
@@ -137,8 +162,13 @@ Use array methods to do the following:
  Return the resulting array.
 ******************************************************************************/
 
-export function marvelEditor() {
-  //your code here
+export function marvelEditor(array) {
+  array.shift();
+  array.splice(1, array.indexOf("Doctor Strange"), "Skrull");
+  array.splice(0, 1, "Captain America");
+  array = array.join("💪");
+
+  return array;
 }
 
 /******************************************************************************
