@@ -198,8 +198,23 @@ Return "😎Primitive values only😎"
 
 ******************************************************************************/
 
-export function coolMaker() {
-  //your code here
+export function coolMaker(parameter) {
+  if (typeof parameter === "string") {
+    return `😎${parameter}😎`;
+  }
+
+  if (typeof parameter === "number") {
+    return `😎${parameter * 2}😎`;
+  }
+
+  if (typeof parameter === "boolean") {
+    if (parameter) {
+      return "😎Yeah😎";
+    }
+    return "😎Chill😎";
+  }
+
+  return "😎Primitive values only😎";
 }
 
 /******************************************************************************
@@ -225,6 +240,12 @@ Example3: (["One", "Two", "Three"], "Four") --> ["One", "Two", "Three", "Four"]
 Example4: (["One", "Two", "Three"], "Two") --> ["One", "Three"]
 ******************************************************************************/
 
-export const addOrRemove = () => {
-  //your code here
+export const addOrRemove = (array, string) => {
+  if (array.includes(string)) {
+    array.splice(array.indexOf(string), 1);
+    return array;
+  }
+
+  array.push(string);
+  return array;
 };
